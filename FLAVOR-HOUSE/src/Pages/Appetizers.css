@@ -1,0 +1,142 @@
+.appetizers-container {
+  background-color: #fdd8ba;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: #e8630a;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #3d2117;
+}
+
+.sort-dropdown button {
+  background-color: #e8630a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Filter Styling */
+.filter-section {
+  margin-bottom: 40px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #3d2117;
+}
+
+.price-slider {
+  width: 100%;
+  accent-color: #e8630a;
+}
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.dietary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  background: #fce8d5;
+  border: 1px solid #e8630a;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.chip.active {
+  background: #e8630a;
+  color: white;
+}
+
+.item-count {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Product Grid (Reuse Home grid styles) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #e8630a;
+}
+
+.img-placeholder {
+  height: 200px;
+  background: #eee;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.info-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.price { color: #e8630a; font-weight: bold; }
+
+.add-to-cart {
+  background: #e8630a;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}

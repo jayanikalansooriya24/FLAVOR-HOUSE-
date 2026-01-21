@@ -11,7 +11,7 @@ import springRollsImg from "../assets/Spring Rolls.jpg";
 import garlicBreadImg from "../assets/Garlic Bread.jpg";
 import stuffedMushroomsImg from "../assets/Stuffed Mushrooms.jpg";
 
-const Appetizers = () => {
+const Beverages = () => {
   const navigate = useNavigate();
 
   // Updated appetizers array with images
@@ -54,7 +54,7 @@ const Appetizers = () => {
         </button>
 
         <header className="page-header">
-          <h1>Appetizers</h1>
+          <h1>Beverages</h1>
           <div className="sort-dropdown">
             <button>Sort by : Popular <span>▼</span></button>
           </div>
@@ -130,4 +130,4 @@ const Appetizers = () => {
   );
 };
 
-export default Appetizers;
+export default Beverages;

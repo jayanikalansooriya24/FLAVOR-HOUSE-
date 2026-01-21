@@ -1,171 +1,351 @@
-/* 1. Ensure the page takes up the full screen and centers content */
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+/* Main Container */
 .signin-page {
-  background-color: #fdd8ba; 
   min-height: 100vh;
-  width: 100vw; /* Added to ensure full width */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
-  box-sizing: border-box; /* Prevents padding from causing overflow */
+  background: linear-gradient(135deg, #f5dac4 0%, #f0c9b0 100%);
+  padding: 2rem 1rem;
+  width: 100vw;
 }
 
-/* 2. Header styling */
+/* Header Section */
 .signin-header {
   text-align: center;
-  margin-bottom: 30px;
-  color: #3d2117;
-  max-width: 600px; /* Limits width to keep text centered nicely */
+  margin-bottom: 2.5rem;
+  animation: fadeInDown 0.6s ease-out;
 }
 
 .signin-header h1 {
-  font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive font size */
-  margin-bottom: 10px;
+  font-size: 3rem;
   font-weight: 800;
+  color: #2d1810;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
 }
 
 .signin-header p {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.125rem;
+  color: #5a3825;
+  font-weight: 500;
 }
 
-/* 3. The Central Card */
+/* Sign In Card */
 .signin-card {
-  background-color: #fce8d5; 
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
   width: 100%;
-  max-width: 450px; /* Limits the width of the form */
-  padding: 40px;
-  border-radius: 40px; /* Rounded corners like the image */
-  border: 1.5px solid #e8630a;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  text-align: center;
-  box-sizing: border-box;
+  max-width: 440px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(245, 218, 196, 0.4);
+  animation: fadeInUp 0.6s ease-out;
 }
+
+.error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 
 .signin-card h2 {
-  font-size: 2.2rem;
-  color: #3d2117;
-  margin-bottom: 25px;
+  font-size: 1.875rem;
   font-weight: 700;
+  color: #2d1810;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* 4. Input Fields */
+/* Form Styles */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .input-group {
   display: flex;
-  align-items: center;
-  background: white;
-  border: 1px solid #d1d1d1;
-  border-left: 6px solid #2b59ff; /* Thick blue bar on the left */
-  margin-bottom: 20px;
-  padding: 12px 15px;
-  text-align: left;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .input-group label {
-  font-size: 0.85rem;
-  color: #555;
-  width: 90px;
-  line-height: 1.1;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d1810;
+  letter-spacing: 0.3px;
 }
 
 .input-group input {
-  border: none;
-  outline: none;
-  flex: 1;
+  padding: 0.875rem 1rem;
   font-size: 1rem;
-  color: #2b59ff;
-  font-weight: 500;
+  color: #2d1810;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
-/* 5. Remember Me & Forgot Password */
+.input-group input:focus {
+  background: #ffffff;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #adb5bd;
+}
+
+/* Form Options */
 .form-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-  color: #3d2117;
-  margin: 15px 0 25px 0;
+  margin-top: -0.5rem;
 }
 
 .remember-me {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #495057;
   cursor: pointer;
+  user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #ff6b35;
 }
 
 .forgot-password {
+  font-size: 0.875rem;
+  color: #ff6b35;
   text-decoration: none;
-  color: #2b59ff;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* 6. Buttons */
+.forgot-password:hover {
+  color: #e05525;
+  text-decoration: underline;
+}
+
+/* Button Group */
 .button-group {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.login-btn,
+.signup-btn {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
 }
 
 .login-btn {
-  flex: 1;
-  background-color: #e8630a;
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(232, 99, 10, 0.3);
+  background: #ff6b35;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.login-btn:hover {
+  background: #e05525;
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
 }
 
 .signup-btn {
-  flex: 1;
-  background-color: white;
-  color: #2b59ff;
-  border: 1.5px solid #e8630a;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
+  background: #ffffff;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
 }
 
-/* 7. Social Login Section */
+.signup-btn:hover {
+  background: #fff5f2;
+  border-color: #e05525;
+  color: #e05525;
+  transform: translateY(-2px);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+}
+
+/* Divider */
 .divider {
-  margin: 15px 0;
-  font-size: 0.9rem;
-  color: #3d2117;
-  font-weight: 600;
+  position: relative;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
 }
 
+.divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #e9ecef;
+}
+
+.divider span {
+  position: relative;
+  background: #ffffff;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Social Login */
 .social-login {
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 25px;
-  margin-top: 10px;
 }
 
 .social-icon {
-  width: 55px;
-  height: 55px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: none;
-  background-color: #e8630a;
-  color: white;
-  font-size: 1.6rem;
-  font-weight: bold;
+  border: 2px solid #e9ecef;
+  background: #ffffff;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
 }
 
-.social-icon:hover {
-  transform: scale(1.1);
+.social-icon.fb {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.social-icon.fb:hover {
+  background: #166fe5;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+  transform: translateY(-2px);
+}
+
+.social-icon.google {
+  background: #ea4335;
+  border-color: #ea4335;
+}
+
+.social-icon.google:hover {
+  background: #d33426;
+  box-shadow: 0 4px 12px rgba(234, 67, 53, 0.3);
+  transform: translateY(-2px);
+}
+
+.social-icon:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signin-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .signin-header p {
+    font-size: 1rem;
+  }
+
+  .signin-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .signin-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-page {
+    padding: 1rem;
+  }
+
+  .signin-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .signin-header h1 {
+    font-size: 2rem;
+  }
+
+  .signin-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 }

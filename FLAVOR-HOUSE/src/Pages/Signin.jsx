@@ -1,54 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Signin.css";
-// If you have FontAwesome or similar for icons, import them here
-// Otherwise, we will use placeholder text or emojis for social icons
 
 function Signin() {
-  return (
-    <div className="signin-page">
-      <header className="signin-header">
-        <h1>Welcome back!</h1>
-        <p>Sign in to continue and enjoy your favorite meals.</p>
-      </header>
+    const navigate = useNavigate();
 
-      <div className="signin-card">
-        <h2>Sign In</h2>
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
-        <form className="signin-form">
-          <div className="input-group">
-            <label>Email Address</label>
-            <input type="email" defaultValue="" />
-          </div>
+    const handleLogin = () => {
+        // Clear previous errors
+        setError("");
 
-          <div className="input-group">
-            <label>Password</label>
-            <input type="password" defaultValue="" />
-          </div>
+        // Email validation
+        if (!email) {
+            setError("Email is required");
+            return;
+        }
 
-          <div className="form-options">
-            <label className="remember-me">
-              <input type="checkbox" /> Remember Me
-            </label>
-            <a href="#" className="forgot-password">Forgot Password?</a>
-          </div>
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError("Please enter a valid email address");
+            return;
+        }
 
-          <div className="button-group">
-            <button type="submit" className="login-btn">Login</button>
-            <button type="button" className="signup-btn">Sign Up</button>
-          </div>
-        </form>
+        // Password validation
+        if (!password) {
+            setError("Password is required");
+            return;
+        }
 
-        <div className="divider">
-          <span>Or login with</span>
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters");
+            return;
+        }
+
+        // ✅ If all validations pass
+        navigate("/home");
+    };
+
+    return (
+        <div className="signin-page">
+            <header className="signin-header">
+                <h1>Welcome back!</h1>
+                <p>Sign in to continue and enjoy your favorite meals.</p>
+            </header>
+
+            <div className="signin-card">
+                <h2>Sign In</h2>
+
+                <form className="signin-form">
+                    <div className="input-group">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="input-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+
+                    {/* Error Message */}
+                    {error && <p className="error-text">{error}</p>}
+
+                    <div className="button-group">
+                        <button
+                            type="button"
+                            className="signup-btn"
+                            onClick={handleLogin}
+                        >
+                            Login
+                        </button>
+
+                        <button type="button" className="signup-btn">
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div className="social-login">
-          <button className="social-icon fb">f</button>
-          <button className="social-icon google">G</button>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default Signin;

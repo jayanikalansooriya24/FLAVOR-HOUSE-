@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Appetizers.css';
 import logo from "../assets/logo.png";
 
-// Import all appetizer images
+
 import caesarImg from "../assets/Caesar Salad.jpg";
 import mozzarellaImg from "../assets/Mozzarella Sticks.jpg";
 import wingsImg from "../assets/Buffalo wings.jpg";
@@ -11,11 +11,11 @@ import springRollsImg from "../assets/Spring Rolls.jpg";
 import garlicBreadImg from "../assets/Garlic Bread.jpg";
 import stuffedMushroomsImg from "../assets/Stuffed Mushrooms.jpg";
 
-const Appetizers = () => {
+const MainCourse = () => {
   const navigate = useNavigate();
 
-  // Updated appetizers array with images
-  const appetizers = [
+  // Updated main course array with images
+  const mainCourse = [
     { id: 1, name: "Caesar Salad", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
     { id: 2, name: "Mozzarella Sticks", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
     { id: 3, name: "Buffalo Wings", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
@@ -25,7 +25,7 @@ const Appetizers = () => {
   ];
 
   return (
-    <div className="appetizers-container">
+    <div className="maincourse-container">
       {/* Navbar */}
       <nav className="navbar">
         <div className="nav-logo">
@@ -54,7 +54,7 @@ const Appetizers = () => {
         </button>
 
         <header className="page-header">
-          <h1>Appetizers</h1>
+          <h1>Main Course</h1>
           <div className="sort-dropdown">
             <button>Sort by : Popular <span>▼</span></button>
           </div>
@@ -80,12 +80,12 @@ const Appetizers = () => {
               <button className="chip">🥑 Keto</button>
             </div>
           </div>
-          <p className="item-count">Showing {appetizers.length} items</p>
+          <p className="item-count">Showing {mainCourse.length} items</p>
         </section>
 
         {/* Products Grid */}
         <div className="product-grid">
-          {appetizers.map((item) => (
+          {mainCourse.map((item) => (
             <div key={item.id} className="product-card">
               <div className="product-image">
                 <img src={item.image} alt={item.name} className="food-img" />
@@ -130,4 +130,4 @@ const Appetizers = () => {
   );
 };
 
-export default Appetizers;
+export default MainCourse;

@@ -4,24 +4,24 @@ import './Appetizers.css';
 import logo from "../assets/logo.png";
 
 // Import all appetizer images
-import caesarImg from "../assets/Caesar Salad.jpg";
-import mozzarellaImg from "../assets/Mozzarella Sticks.jpg";
-import wingsImg from "../assets/Buffalo wings.jpg";
-import springRollsImg from "../assets/Spring Rolls.jpg";
-import garlicBreadImg from "../assets/Garlic Bread.jpg";
-import stuffedMushroomsImg from "../assets/Stuffed Mushrooms.jpg";
+import caesarImg from "../assets/Chocolate Brownie.jpg";
+import mozzarellaImg from "../assets/Fruit Salad.jpg";
+import wingsImg from "/src/assets/Ice Cream.jpg";
+import springRollsImg from "../assets/Watalappan.jpg";
+import garlicBreadImg from "../assets/Custard Pudding.jpg";
+import stuffedMushroomsImg from "../assets/Fruit Yogurt Cup.jpg";
 
 const Desserts = () => {
   const navigate = useNavigate();
 
   // Updated appetizers array with images
   const appetizers = [
-    { id: 1, name: "Caesar Salad", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
-    { id: 2, name: "Mozzarella Sticks", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
-    { id: 3, name: "Buffalo Wings", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
-    { id: 4, name: "Spring Rolls", price: "Rs 450.00", image: springRollsImg, type: "Vegetarian" },
-    { id: 5, name: "Garlic Bread", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
-    { id: 6, name: "Stuffed Mushrooms", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
+    { id: 1, name: "Chocolate Brownie", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
+    { id: 2, name: "Fruit Salad", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
+    { id: 3, name: "Ice Cream ", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
+    { id: 4, name: "Watalappan", price: "Rs 450.00", image: springRollsImg, type: "Vegetarian" },
+    { id: 5, name: "Custard Pudding", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
+    { id: 6, name: "Fruit Yogurt Cup", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
   ];
 
   return (

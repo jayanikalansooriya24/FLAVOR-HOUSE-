@@ -4,24 +4,24 @@ import './Appetizers.css';
 import logo from "../assets/logo.png";
 
 // Import all appetizer images
-import caesarImg from "../assets/Caesar Salad.jpg";
-import mozzarellaImg from "../assets/Mozzarella Sticks.jpg";
-import wingsImg from "../assets/Buffalo wings.jpg";
-import springRollsImg from "../assets/Spring Rolls.jpg";
-import garlicBreadImg from "../assets/Garlic Bread.jpg";
-import stuffedMushroomsImg from "../assets/Stuffed Mushrooms.jpg";
+import caesarImg from "../assets/Fresh Lime Juice.jpg";
+import mozzarellaImg from "../assets/Milk Tea.jpg";
+import wingsImg from "../assets/Iced Coffee.jpg";
+import springRollsImg from "../assets/Fresh Orange Juice.jpg";
+import garlicBreadImg from "../assets/Chocolate Milkshake.jpg";
+import stuffedMushroomsImg from "../assets/Herbal Tea.jpg";
 
 const Beverages = () => {
   const navigate = useNavigate();
 
   // Updated appetizers array with images
   const appetizers = [
-    { id: 1, name: "Caesar Salad", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
-    { id: 2, name: "Mozzarella Sticks", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
-    { id: 3, name: "Buffalo Wings", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
-    { id: 4, name: "Spring Rolls", price: "Rs 450.00", image: springRollsImg, type: "Vegetarian" },
-    { id: 5, name: "Garlic Bread", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
-    { id: 6, name: "Stuffed Mushrooms", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
+    { id: 1, name: "Fresh Lime Juice", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
+    { id: 2, name: "Milk Tea", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
+    { id: 3, name: "Iced Coffee", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
+    { id: 4, name: "Fresh Orange Juice", price: "Rs 450.00", image: springRollsImg, type: "Vegetarian" },
+    { id: 5, name: "Chocolate Milkshake", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
+    { id: 6, name: "Herbal Tea", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
   ];
 
   return (

@@ -4,24 +4,24 @@ import './Appetizers.css';
 import logo from "../assets/logo.png";
 
 
-import caesarImg from "../assets/Caesar Salad.jpg";
-import mozzarellaImg from "../assets/Mozzarella Sticks.jpg";
-import wingsImg from "../assets/Buffalo wings.jpg";
+import caesarImg from "../assets/Grilled Chicken with Rice.jpg";
+import mozzarellaImg from "../assets/Vegetable Fried Rice.jpg";
+import wingsImg from "../assets/Chicken Biriyani.jpg";
 import springRollsImg from "../assets/Spring Rolls.jpg";
-import garlicBreadImg from "../assets/Garlic Bread.jpg";
-import stuffedMushroomsImg from "../assets/Stuffed Mushrooms.jpg";
+import garlicBreadImg from "../assets/Fish Curry Meal.jpg";
+import stuffedMushroomsImg from "../assets/Vegetable Kottu.jpg";
 
 const MainCourse = () => {
   const navigate = useNavigate();
 
   // Updated main course array with images
   const mainCourse = [
-    { id: 1, name: "Caesar Salad", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
-    { id: 2, name: "Mozzarella Sticks", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
-    { id: 3, name: "Buffalo Wings", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
+    { id: 1, name: "Grilled Chicken with Rice", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
+    { id: 2, name: "Vegetable Fried Rice", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
+    { id: 3, name: "Chicken Biriyani", price: "Rs 800.00", image: wingsImg, type: "Vegetarian" },
     { id: 4, name: "Spring Rolls", price: "Rs 450.00", image: springRollsImg, type: "Vegetarian" },
-    { id: 5, name: "Garlic Bread", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
-    { id: 6, name: "Stuffed Mushrooms", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
+    { id: 5, name: "Fish Curry Meal", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
+    { id: 6, name: "Vegetable Kottu", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
   ];
 
   return (

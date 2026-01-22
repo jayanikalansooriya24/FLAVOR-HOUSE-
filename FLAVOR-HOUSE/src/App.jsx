@@ -9,7 +9,10 @@ import Desserts from "./Pages/Desserts";
 import Beverages from "./Pages/Beverages";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
-import OneFood from "./Pages/Product/OneFood"; // ✅ FIXED
+import OneFood from "./Pages/Product/OneFood"; 
+import TwoFood from "./Pages/Product/TwoFood";
+import ThreeFood from "./Pages/Product/Threefood";
+import Four from "./Pages/Product/Fourfood";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
 
         {/* OneFood route */}
         <Route path="/onefood" element={<OneFood />} />
+        <Route path="/twofood" element={<TwoFood />} />
+         <Route path="/threefood" element={<ThreeFood />} />
+         <Route path="/fourfood" element={<Four />} />
       </Routes>
     </Router>
   );

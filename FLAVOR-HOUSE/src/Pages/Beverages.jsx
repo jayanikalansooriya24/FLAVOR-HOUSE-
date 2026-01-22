@@ -89,10 +89,10 @@ const Beverages = () => {
               key={item.id}
               className="product-card"
               onClick={() => {
-                if (item.name === "Fresh Lime Juice") navigate("/onefood");
+                if (item.name === "Fresh Lime Juice") navigate("/");
                 else if (item.name === "Milk Tea") navigate("/Milktea");
-                else if (item.name === "Iced Coffee") navigate("/threefood");
-                else if (item.name === "Fresh Orange Juice") navigate("/fourfood");
+                else if (item.name === "Iced Coffee") navigate("/");
+                else if (item.name === "Fresh Orange Juice") navigate("/");
                 else if (item.name === "Chocolate Milkshake") navigate("/ChocolateMilkshake");
                 else if (item.name === "Herbal Tea") navigate("/HerbalTea");
               }}

@@ -15,11 +15,11 @@ const AboutUs = () => {
           <img src={logo} alt="Flavor House" onClick={() => navigate('/home')} />
         </div>
         <div className="nav-links">
-          <button className="nav-btn" onClick={() => navigate('/home')}>Home</button>
-          <button className="nav-btn active">AboutUs</button>
-          <button className="nav-btn" onClick={() => navigate('/menu')}>Menu</button>
-          <button className="nav-btn" onClick={() => navigate('/contact')}>ContactUs</button>
-        </div>
+                    <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
+                    <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
+                    <button className="nav-btn active" onClick={() => navigate('/Menu')}>Menu</button>
+                    <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
+                </div>
         <div className="nav-icons">
           <span className="icon">🛍️</span>
           <span className="icon">👤</span>
@@ -74,13 +74,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* Restaurant Image */}
-        <section className="image-section">
-          <div className="restaurant-image">
-            {/* Replace with actual image */}
-            <div className="img-placeholder">Restaurant Ambiance</div>
-          </div>
-        </section>
+        
       </main>
 
       {/* Footer */}

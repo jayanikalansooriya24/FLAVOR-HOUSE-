@@ -37,11 +37,11 @@ const Beverages = () => {
           />
         </div>
         <div className="nav-links">
-          <button className="nav-btn" onClick={() => navigate('/home')}>Home</button>
-          <button className="nav-btn">AboutUs</button>
-          <button className="nav-btn active">Menu</button>
-          <button className="nav-btn">ContactUs</button>
-        </div>
+                    <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
+                    <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
+                    <button className="nav-btn active" onClick={() => navigate('/home')}>Menu</button>
+                    <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
+                </div>
         <div className="nav-icons">
           <span className="icon">🛍️</span>
           <span className="icon">👤</span>

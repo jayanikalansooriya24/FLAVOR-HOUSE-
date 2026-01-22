@@ -27,8 +27,7 @@ const Home = () => {
         { id: 6, name: "Iced Coffee", price: "Rs 250.00", image: coffeeImg, type: "Vegetarian" },
         { id: 4, name: "Spring Rolls", price: "Rs 450.00", image: springRollsImg, type: "Vegetarian" },
         { id: 5, name: "Garlic Bread", price: "Rs 350.00", image: garlicBreadImg, type: "Vegetarian" },
-        { id: 6, name: "Stuffed Mushrooms", price: "Rs 700.00", image: stuffedMushroomsImg, type: "Vegetarian" },
-        { id: 2, name: "Mozzarella Sticks", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
+         { id: 2, name: "Mozzarella Sticks", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
     ];
 
     return (
@@ -40,9 +39,9 @@ const Home = () => {
                 </div>
                 <div className="nav-links">
                     <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
-                    <button className="nav-btn">AboutUs</button>
-                    <button className="nav-btn">Menu</button>
-                    <button className="nav-btn">ContactUs</button>
+                    <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
+                    <button className="nav-btn active" onClick={() => navigate('/Menu')}>Menu</button>
+                    <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
                 </div>
                 <div className="nav-icons">
                     <span className="icon">🛍️</span>

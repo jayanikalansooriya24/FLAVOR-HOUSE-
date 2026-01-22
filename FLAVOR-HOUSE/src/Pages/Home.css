@@ -37,23 +37,17 @@ background: linear-gradient(135deg, #f5dac4 0%, #f0c9b0 100%);
   top: 0;
   z-index: 1000;
   animation: slideDown 0.5s ease-out;
-  height: 90px;
+  height: 80px;
   
-}
-.food-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .nav-logo img {
-  height: 200px;
-  width: 200px;
+  height: 140px;     /* increase size */
+  width: auto;       /* keep aspect ratio */
+  max-height: 100%;
   object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
 }
+
 
 .nav-logo img:hover {
   transform: scale(1.05);

@@ -7,6 +7,7 @@ import MainCourse from "./Pages/MainCourse";
 import Desserts from "./Pages/Desserts";
 import Beverages from "./Pages/Beverages";
 import AboutUs from "./Pages/AboutUs";
+import ContactUs from "./Pages/ContactUs";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Desserts" element={<Desserts />} />
         <Route path="/Beverages" element={<Beverages />} />
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
 
       
         

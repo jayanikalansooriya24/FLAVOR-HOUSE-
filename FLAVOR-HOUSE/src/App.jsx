@@ -15,9 +15,11 @@ import ThreeFood from "./Pages/Product/Threefood";
 import Four from "./Pages/Product/FourFood";
 import FiveFood from "./Pages/Product/FiveFood";
 import SixFood from "./Pages/Product/SixFood";
-import SevenFood from "./Pages/Product/Sevenfood";
+import SevenFood from "./Pages/Product/SevenFood";
 import VegetableFriedRice from "./Pages/Product/VegetableFriedRice";
 import ChickenBiriyani from "./Pages/Product/ChickenBiriyani";
+import FishCurryMeal from "./Pages/Product/FishCurryMeal";
+import VegetableKottu from "./Pages/Product/Vegetable Kottu";
 
 
 
@@ -35,7 +37,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
 
-        {/* OneFood route */}
+      
         <Route path="/onefood" element={<OneFood />} />
         <Route path="/twofood" element={<TwoFood />} />
         <Route path="/threefood" element={<ThreeFood />} />
@@ -45,6 +47,9 @@ function App() {
         <Route path="/Sevenfood" element={<SevenFood />} />
         <Route path="/vegetablefriedrice" element={<VegetableFriedRice />} />
         <Route path="/chickenbiriyani" element={<ChickenBiriyani />} />
+        <Route path="/fishcurrymeal" element={<FishCurryMeal />} />
+        <Route path="/vegetablekottu" element={<VegetableKottu />} />
+
 
 
 

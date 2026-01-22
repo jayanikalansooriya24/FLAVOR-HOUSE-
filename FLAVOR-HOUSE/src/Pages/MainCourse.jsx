@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './MainCourse.css';
 import logo from "../assets/logo.png";
 
-
 import caesarImg from "../assets/Grilled Chicken with Rice.jpg";
 import mozzarellaImg from "../assets/Vegetable Fried Rice.jpg";
 import wingsImg from "../assets/Chicken Biriyani.jpg";
@@ -14,7 +13,6 @@ import stuffedMushroomsImg from "../assets/Vegetable Kottu.jpg";
 const MainCourse = () => {
   const navigate = useNavigate();
 
-  // Updated main course array with images
   const mainCourse = [
     { id: 1, name: "Grilled Chicken with Rice", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
     { id: 2, name: "Vegetable Fried Rice", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
@@ -36,12 +34,14 @@ const MainCourse = () => {
             style={{ cursor: 'pointer' }}
           />
         </div>
-         <div className="nav-links">
-                    <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
-                    <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
-                    <button className="nav-btn active" onClick={() => navigate('/home')}>Menu</button>
-                    <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
-                </div>
+
+        <div className="nav-links">
+          <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
+          <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
+          <button className="nav-btn active" onClick={() => navigate('/home')}>Menu</button>
+          <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
+        </div>
+
         <div className="nav-icons">
           <span className="icon">🛍️</span>
           <span className="icon">👤</span>
@@ -66,7 +66,10 @@ const MainCourse = () => {
             <label>Price Range</label>
             <div className="price-slider-container">
               <input type="range" className="price-slider" />
-              <div className="price-labels"><span>Rs 100</span><span>Rs 1000</span></div>
+              <div className="price-labels">
+                <span>Rs 100</span>
+                <span>Rs 1000</span>
+              </div>
             </div>
           </div>
 
@@ -80,26 +83,58 @@ const MainCourse = () => {
               <button className="chip">🥑 Keto</button>
             </div>
           </div>
+
           <p className="item-count">Showing {mainCourse.length} items</p>
         </section>
 
         {/* Products Grid */}
         <div className="product-grid">
           {mainCourse.map((item) => (
-            <div key={item.id} className="product-card">
+            <div
+              key={item.id}
+              className="product-card"
+              onClick={() => {
+                if (item.name === "Grilled Chicken with Rice") {
+                  navigate("/SevenFood");
+                } else if (item.name === "Vegetable Fried Rice") {
+                  navigate("/vegetablefriedrice");
+                } else if (item.name === "Chicken Biriyani") {
+                  navigate("/ChickenBiriyani");
+                } else if (item.name === "Spring Rolls") {
+                  navigate("/fourfood");
+                } else if (item.name === "Fish Curry Meal") {
+                  navigate("/FishCurryMeal");
+                } else if (item.name === "Vegetable Kottu") {
+                  navigate("/VegetableKottu");
+                }
+              }}
+              style={{ cursor: "pointer" }}
+            >
               <div className="product-image">
                 <img src={item.image} alt={item.name} className="food-img" />
               </div>
+
               <div className="product-info">
                 <div className="info-top">
                   <h3>{item.name}</h3>
                   <span className="price">{item.price}</span>
                 </div>
+
                 <p className="description">
                   Delicious, freshly prepared {item.name}.
                 </p>
+
                 <div className="tag">🟢 {item.type}</div>
-                <button className="add-to-cart">ADD TO CART</button>
+
+                <button
+                  className="add-to-cart"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    alert(`${item.name} added to cart!`);
+                  }}
+                >
+                  ADD TO CART
+                </button>
               </div>
             </div>
           ))}
@@ -114,15 +149,19 @@ const MainCourse = () => {
           <p>✉️ hello@flavorhouse.lk</p>
           <p>🕒 Open Daily: 10:00 AM – 11:00 PM</p>
         </div>
+
         <div className="footer-center">
           <h2>FLAVOR HOUSE</h2>
           <p>Crisp, fresh & full of flavor</p>
           <small>© 2026 FLAVOR HOUSE</small>
         </div>
+
         <div className="footer-right">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <span>Facebook</span> <span>Insta</span> <span>TikTok</span>
+            <span>Facebook</span>
+            <span>Insta</span>
+            <span>TikTok</span>
           </div>
         </div>
       </footer>

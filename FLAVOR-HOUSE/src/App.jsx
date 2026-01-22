@@ -20,6 +20,11 @@ import VegetableFriedRice from "./Pages/Product/VegetableFriedRice";
 import ChickenBiriyani from "./Pages/Product/ChickenBiriyani";
 import FishCurryMeal from "./Pages/Product/FishCurryMeal";
 import VegetableKottu from "./Pages/Product/Vegetable Kottu";
+import ChocolateBrownie from "./Pages/Product/Chocolate Brownie";
+import Icecream from "./Pages/Product/Ice Cream";
+import Watalappan from "./Pages/Product/Watalappan";
+import CustardPudding from "./Pages/Product/Custard Pudding";
+import FruitYogurtCup from "./Pages/Product/Fruit Yogurt Cup";
 
 
 
@@ -49,6 +54,11 @@ function App() {
         <Route path="/chickenbiriyani" element={<ChickenBiriyani />} />
         <Route path="/fishcurrymeal" element={<FishCurryMeal />} />
         <Route path="/vegetablekottu" element={<VegetableKottu />} />
+        <Route path="/chocolatebrownie" element={<ChocolateBrownie />} />
+        <Route path="/icecream" element={<Icecream />} />
+        <Route path="/watalappan" element={<Watalappan />} />
+        <Route path="/custardpudding" element={<CustardPudding />} />
+        <Route path="/fruityogurtcup" element={<FruitYogurtCup />} />
 
 
 

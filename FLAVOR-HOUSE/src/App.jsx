@@ -26,6 +26,9 @@ import Watalappan from "./Pages/Product/Watalappan";
 import CustardPudding from "./Pages/Product/Custard Pudding";
 import FruitYogurtCup from "./Pages/Product/Fruit Yogurt Cup";
 import FruitSalad from "./Pages/Product/Fruit Salad";
+import HerbalTea from "./Pages/Product/Herbal Tea";
+import ChocolateMilkshake from "./Pages/Product/Chocolate Milkshake";
+import Milktea from "./Pages/Product/Milk Tea";
 
 
 
@@ -44,7 +47,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
 
-      
+
         <Route path="/onefood" element={<OneFood />} />
         <Route path="/twofood" element={<TwoFood />} />
         <Route path="/threefood" element={<ThreeFood />} />
@@ -62,10 +65,9 @@ function App() {
         <Route path="/custardpudding" element={<CustardPudding />} />
         <Route path="/fruityogurtcup" element={<FruitYogurtCup />} />
         <Route path="/fruitsalad" element={<FruitSalad />} />
-
-
-
-
+        <Route path="/herbaltea" element={<HerbalTea />} />
+        <Route path="/chocolatemilkshake" element={<ChocolateMilkshake />} />
+        <Route path="/milktea" element={<Milktea />} />
 
 
 

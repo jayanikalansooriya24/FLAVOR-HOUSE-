@@ -9,14 +9,15 @@ import Desserts from "./Pages/Desserts";
 import Beverages from "./Pages/Beverages";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
-import OneFood from "./Pages/Appetizers Product/OneFood";
-import TwoFood from "./Pages/Appetizers Product/TwoFood";
-import ThreeFood from "./Pages/Appetizers Product/Threefood";
-import Four from "./Pages/Appetizers Product/FourFood";
-import FiveFood from "./Pages/Appetizers Product/FiveFood";
-import SixFood from "./Pages/Appetizers Product/SixFood";
-import SevenFood from "./Pages/Appetizers Product/Sevenfood";
-import VegetableFriedRice from "./Pages/Appetizers Product/VegetableFriedRice";
+import OneFood from "./Pages/Product/OneFood";
+import TwoFood from "./Pages/Product/TwoFood";
+import ThreeFood from "./Pages/Product/Threefood";
+import Four from "./Pages/Product/FourFood";
+import FiveFood from "./Pages/Product/FiveFood";
+import SixFood from "./Pages/Product/SixFood";
+import SevenFood from "./Pages/Product/Sevenfood";
+import VegetableFriedRice from "./Pages/Product/VegetableFriedRice";
+import ChickenBiriyani from "./Pages/Product/ChickenBiriyani";
 
 
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/sixfood" element={<SixFood />} />
         <Route path="/Sevenfood" element={<SevenFood />} />
         <Route path="/vegetablefriedrice" element={<VegetableFriedRice />} />
+        <Route path="/chickenbiriyani" element={<ChickenBiriyani />} />
 
 
 

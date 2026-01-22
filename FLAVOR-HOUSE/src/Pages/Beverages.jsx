@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Appetizers.css';
 import logo from "../assets/logo.png";
 
-// Import all appetizer images
+// Drink images
 import caesarImg from "../assets/Fresh Lime Juice.jpg";
 import mozzarellaImg from "../assets/Milk Tea.jpg";
 import wingsImg from "../assets/Iced Coffee.jpg";
@@ -14,7 +14,6 @@ import stuffedMushroomsImg from "../assets/Herbal Tea.jpg";
 const Beverages = () => {
   const navigate = useNavigate();
 
-  // Updated appetizers array with images
   const appetizers = [
     { id: 1, name: "Fresh Lime Juice", price: "Rs 350.00", image: caesarImg, type: "Vegetarian" },
     { id: 2, name: "Milk Tea", price: "Rs 650.00", image: mozzarellaImg, type: "Vegetarian" },
@@ -37,11 +36,11 @@ const Beverages = () => {
           />
         </div>
         <div className="nav-links">
-                    <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
-                    <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
-                    <button className="nav-btn active" onClick={() => navigate('/home')}>Menu</button>
-                    <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
-                </div>
+          <button className="nav-btn active" onClick={() => navigate('/home')}>Home</button>
+          <button className="nav-btn active" onClick={() => navigate('/AboutUs')}>About Us</button>
+          <button className="nav-btn active" onClick={() => navigate('/home')}>Menu</button>
+          <button className="nav-btn active" onClick={() => navigate('/ContactUs')}>Contact Us</button>
+        </div>
         <div className="nav-icons">
           <span className="icon">🛍️</span>
           <span className="icon">👤</span>
@@ -86,20 +85,44 @@ const Beverages = () => {
         {/* Products Grid */}
         <div className="product-grid">
           {appetizers.map((item) => (
-            <div key={item.id} className="product-card">
+            <div
+              key={item.id}
+              className="product-card"
+              onClick={() => {
+                if (item.name === "Fresh Lime Juice") navigate("/onefood");
+                else if (item.name === "Milk Tea") navigate("/Milktea");
+                else if (item.name === "Iced Coffee") navigate("/threefood");
+                else if (item.name === "Fresh Orange Juice") navigate("/fourfood");
+                else if (item.name === "Chocolate Milkshake") navigate("/ChocolateMilkshake");
+                else if (item.name === "Herbal Tea") navigate("/HerbalTea");
+              }}
+              style={{ cursor: "pointer" }}
+            >
               <div className="product-image">
                 <img src={item.image} alt={item.name} className="food-img" />
               </div>
+
               <div className="product-info">
                 <div className="info-top">
                   <h3>{item.name}</h3>
                   <span className="price">{item.price}</span>
                 </div>
+
                 <p className="description">
                   Delicious, freshly prepared {item.name}.
                 </p>
+
                 <div className="tag">🟢 {item.type}</div>
-                <button className="add-to-cart">ADD TO CART</button>
+
+                <button
+                  className="add-to-cart"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    alert(`${item.name} added to cart!`);
+                  }}
+                >
+                  ADD TO CART
+                </button>
               </div>
             </div>
           ))}
@@ -114,15 +137,19 @@ const Beverages = () => {
           <p>✉️ hello@flavorhouse.lk</p>
           <p>🕒 Open Daily: 10:00 AM – 11:00 PM</p>
         </div>
+
         <div className="footer-center">
           <h2>FLAVOR HOUSE</h2>
           <p>Crisp, fresh & full of flavor</p>
           <small>© 2026 FLAVOR HOUSE</small>
         </div>
+
         <div className="footer-right">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <span>Facebook</span> <span>Insta</span> <span>TikTok</span>
+            <span>Facebook</span>
+            <span>Insta</span>
+            <span>TikTok</span>
           </div>
         </div>
       </footer>

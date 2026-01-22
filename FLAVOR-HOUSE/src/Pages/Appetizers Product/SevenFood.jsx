@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './OneFood.css';
 import logo from "../../assets/logo.png";
-import wingsImg from "../../assets/Buffalo Wings.jpg"; 
+import wingsImg from "../../assets/Grilled Chicken with Rice.jpg"; 
 
 const OneFood = () => {
     const navigate = useNavigate();
@@ -65,7 +65,7 @@ const OneFood = () => {
                             <div className="food-image">
                                 <img
                                     src={wingsImg}
-                                    alt="Buffalo Wings"
+                                    alt="Grilled Chicken with Rice"
                                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
                                 />
                             </div>
@@ -73,7 +73,7 @@ const OneFood = () => {
 
                         <div className="food-details-section">
                             <div className="food-header">
-                                <h1>Buffalo Wings</h1>
+                                <h1>Grilled Chicken with Rice</h1>
                                 <span className="food-price">Rs {(basePrice + sizePrice + addOnsPrice).toFixed(2)}</span>
                             </div>
 

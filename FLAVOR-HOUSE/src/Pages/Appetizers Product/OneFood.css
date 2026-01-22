@@ -27,7 +27,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 3rem;
-  background: #faf6f1;
+    background: linear-gradient(135deg, #f5dac4 0%, #f0c9b0 100%);
   box-shadow: none;
   border-bottom: 1px solid #e9dcc9;
   position: sticky;

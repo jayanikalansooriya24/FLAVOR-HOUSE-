@@ -9,12 +9,16 @@ import Desserts from "./Pages/Desserts";
 import Beverages from "./Pages/Beverages";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
-import OneFood from "./Pages/Appetizers Product/OneFood"; 
+import OneFood from "./Pages/Appetizers Product/OneFood";
 import TwoFood from "./Pages/Appetizers Product/TwoFood";
 import ThreeFood from "./Pages/Appetizers Product/Threefood";
 import Four from "./Pages/Appetizers Product/FourFood";
 import FiveFood from "./Pages/Appetizers Product/FiveFood";
 import SixFood from "./Pages/Appetizers Product/SixFood";
+import SevenFood from "./Pages/Appetizers Product/Sevenfood";
+import VegetableFriedRice from "./Pages/Appetizers Product/VegetableFriedRice";
+
+
 
 function App() {
   return (
@@ -33,10 +37,16 @@ function App() {
         {/* OneFood route */}
         <Route path="/onefood" element={<OneFood />} />
         <Route path="/twofood" element={<TwoFood />} />
-         <Route path="/threefood" element={<ThreeFood />} />
-         <Route path="/fourfood" element={<Four />} />
-         <Route path="/fivefood" element={<FiveFood />} />
-          <Route path="/sixfood" element={<SixFood />} />
+        <Route path="/threefood" element={<ThreeFood />} />
+        <Route path="/fourfood" element={<Four />} />
+        <Route path="/fivefood" element={<FiveFood />} />
+        <Route path="/sixfood" element={<SixFood />} />
+        <Route path="/Sevenfood" element={<SevenFood />} />
+        <Route path="/vegetablefriedrice" element={<VegetableFriedRice />} />
+
+
+
+
 
       </Routes>
     </Router>

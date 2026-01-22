@@ -1,0 +1,750 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Container */
+.onefood-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5dac4 0%, #f0c9b0 100%);
+  width: 100vw;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: #faf6f1;
+  box-shadow: none;
+  border-bottom: 1px solid #e9dcc9;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.nav-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-btn {
+  background: none;
+  border: 2px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d1810;
+  cursor: pointer;
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  border-color: #ff6b35;
+  color: #ff6b35;
+}
+
+.nav-btn.active {
+  border-color: #ff6b35;
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0.25rem;
+  color: #2d1810;
+}
+
+.icon:hover {
+  transform: scale(1.15);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Food Modal */
+.food-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 2px solid #e9dcc9;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #e9dcc9;
+  color: #ff6b35;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn:hover {
+  background: #ff6b35;
+  color: #ffffff;
+  transform: rotate(90deg);
+  border-color: #ff6b35;
+}
+
+/* Modal Content */
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* Left Side - Image */
+.food-image-section {
+  background: linear-gradient(135deg, #fff5ee 0%, #ffe8d6 100%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 0 0 16px;
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffdfcc 0%, #ffc9a8 100%);
+}
+
+.food-emoji {
+  font-size: 8rem;
+}
+
+/* Right Side - Details */
+.food-details-section {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #faf9f7;
+  border-radius: 0 16px 16px 0;
+}
+
+/* Food Header */
+.food-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.food-header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #2d1810;
+  line-height: 1.2;
+}
+
+.food-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ff6b35;
+  white-space: nowrap;
+}
+
+/* Description */
+.food-description {
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Option Groups */
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2d1810;
+  letter-spacing: 0.2px;
+}
+
+/* Size Options */
+.size-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+}
+
+.size-btn {
+  padding: 0.875rem;
+  background: #ffffff;
+  border: 2px solid #e9dcc9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.size-btn:hover {
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.03);
+}
+
+.size-btn.active {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}
+
+.size-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2d1810;
+}
+
+.size-btn.active .size-name {
+  color: #ffffff;
+}
+
+.size-desc {
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.size-btn.active .size-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add-ons Options */
+.addons-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.addon-btn {
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border: 2px solid #e9dcc9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addon-btn:hover {
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.03);
+}
+
+.addon-btn.active {
+  background: rgba(255, 107, 53, 0.1);
+  border-color: #ff6b35;
+}
+
+.addon-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d1810;
+}
+
+.addon-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+/* Quantity Section */
+.quantity-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: fit-content;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #e9dcc9;
+  color: #2d1810;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background: #ff6b35;
+  color: #ffffff;
+  border-color: #ff6b35;
+  transform: scale(1.1);
+}
+
+.quantity-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantity-input {
+  width: 50px;
+  height: 36px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d1810;
+  border: 2px solid #e9dcc9;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: #ff6b35;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+.add-to-cart-btn:hover {
+  background: #e05525;
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.35);
+  transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.food-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem 3rem 2rem;
+  background: #2d1810;
+  color: #ffffff;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-left p {
+  font-size: 0.95rem;
+  color: #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-center h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6b35;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-center p {
+  font-size: 1rem;
+  color: #e9ecef;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.footer-center small {
+  font-size: 0.85rem;
+  color: #adb5bd;
+}
+
+.footer-right {
+  align-items: flex-end;
+}
+
+.footer-right h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.875rem;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  background: #ff6b35;
+  color: #ffffff;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  background: #e05525;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .food-image-section {
+    border-radius: 16px 16px 0 0;
+    min-height: 300px;
+  }
+
+  .food-image {
+    min-height: 300px;
+  }
+
+  .food-details-section {
+    padding: 2rem;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .food-footer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-logo img {
+    height: 50px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e9dcc9;
+  }
+
+  .nav-btn {
+    font-size: 0.85rem;
+    padding: 0.375rem 1rem;
+  }
+
+  .modal-overlay {
+    padding: 1rem;
+    top: 100px;
+  }
+
+  .close-btn {
+    width: 32px;
+    height: 32px;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.125rem;
+  }
+
+  .food-image-section {
+    padding: 1.5rem;
+    min-height: 250px;
+  }
+
+  .food-image {
+    min-height: 250px;
+  }
+
+  .food-emoji {
+    font-size: 6rem;
+  }
+
+  .food-details-section {
+    padding: 1.75rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .food-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .food-price {
+    font-size: 1.25rem;
+  }
+
+  .size-options {
+    grid-template-columns: 1fr;
+  }
+
+  .food-footer {
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.875rem 1rem;
+  }
+
+  .nav-logo img {
+    height: 45px;
+  }
+
+  .nav-btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  .modal-overlay {
+    padding: 0.5rem;
+    top: 90px;
+  }
+
+  .food-modal {
+    border-radius: 12px;
+  }
+
+  .close-btn {
+    width: 28px;
+    height: 28px;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .food-image-section {
+    padding: 1rem;
+    min-height: 200px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .food-image {
+    min-height: 200px;
+  }
+
+  .food-emoji {
+    font-size: 5rem;
+  }
+
+  .food-details-section {
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .food-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .food-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .food-price {
+    font-size: 1.125rem;
+  }
+
+  .food-description {
+    font-size: 0.8rem;
+  }
+
+  .option-label {
+    font-size: 0.8rem;
+  }
+
+  .size-btn,
+  .addon-btn {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .size-name,
+  .addon-name {
+    font-size: 0.8rem;
+  }
+
+  .size-desc,
+  .addon-price {
+    font-size: 0.75rem;
+  }
+
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .quantity-input {
+    width: 45px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .food-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-center h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}

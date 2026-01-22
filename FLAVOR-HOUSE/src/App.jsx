@@ -25,6 +25,8 @@ import Icecream from "./Pages/Product/Ice Cream";
 import Watalappan from "./Pages/Product/Watalappan";
 import CustardPudding from "./Pages/Product/Custard Pudding";
 import FruitYogurtCup from "./Pages/Product/Fruit Yogurt Cup";
+import FruitSalad from "./Pages/Product/Fruit Salad";
+
 
 
 
@@ -59,6 +61,9 @@ function App() {
         <Route path="/watalappan" element={<Watalappan />} />
         <Route path="/custardpudding" element={<CustardPudding />} />
         <Route path="/fruityogurtcup" element={<FruitYogurtCup />} />
+        <Route path="/fruitsalad" element={<FruitSalad />} />
+
+
 
 
 
